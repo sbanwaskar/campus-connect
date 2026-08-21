@@ -9,8 +9,9 @@ function OrganizerLogin({
     const [password, setPassword] = useState("");
     
     async function handleLogin() {
-      const response = await fetch("http://localhost:5001/organizer/login", {
-        method: "POST",
+      
+      const API_URL = import.meta.env.VITE_API_URL;
+      const response = await fetch(`${API_URL}/organizer/login`, {        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
